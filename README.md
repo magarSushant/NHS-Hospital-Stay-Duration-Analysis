@@ -1,4 +1,4 @@
-## NHS-Hospital-Stay-Duration-Analysis
+### **NHS-Hospital-Stay-Duration-Analysis**
 Predictive modeling project for analyzing hospital stay durations using Alteryx.
 Hospital Stay Duration Analysis (Fictitious Case Study)
 
@@ -68,31 +68,31 @@ _View the Report_: Access the consultancy report for detailed analysis and insig
 
 # _**Project Resources**_
 
-For detailed analysis and methodology, please refer to the [Alteryx Workflow]([link_to_workflow](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Atleryx%20Workflow.yxmd) where all assumptions, data preparation steps, and methodologies are thoroughly documented with comments. 
+For detailed analysis and methodology, please refer to the [Alteryx Workflow](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Atleryx%20Workflow.yxmd), where all assumptions, data preparation steps, and methodologies are thoroughly documented with comments. 
 
 Below are links to the project files:
 
-- [Consultancy Report (PDF)]([link_to_report](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Report.pdf)) 
+- [Consultancy Report (PDF)](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Report.pdf)  
   The full consultancy report, detailing the findings, recommendations, and predictive model evaluation for the NHS Trust hospital stay duration case study.
 
-- [Alteryx Workflow]([link_to_workflow](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Atleryx%20Workflow.yxmd))  
+- [Alteryx Workflow](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Atleryx%20Workflow.yxmd)  
   The Alteryx workflow used for data preparation, blending, analysis, and predictive modeling. All steps are annotated with comments explaining the process and assumptions.
 
-- [Patient Information Dataset]([link_to_dataset_1](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Patient%20Information.xlsx))
+- [Patient Information Dataset](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Patient%20Information.xlsx)  
   This dataset contains demographic and medical information for patients.
 
-- [Surgical Information Dataset]([link_to_dataset_2](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Surgical%20Information.xlsx))  
+- [Surgical Information Dataset](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Surgical%20Information.xlsx)  
   This dataset contains detailed information about the surgical procedures performed.
 
-- [ICD-10 Codes Dataset]([link_to_dataset_3](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/ICD-10%20Codes.xlsx))  
+- [ICD-10 Codes Dataset](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/ICD-10%20Codes.xlsx)  
   The dataset contains ICD-10 codes for categorizing the surgical procedures.
 
-- [Current Patients Dataset]([link_to_dataset_4](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Current%20Patients.xlsx))  
+- [Current Patients Dataset](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/Datasets/Current%20Patients.xlsx)  
   This dataset is used for forecasting the length of stay for current patients undergoing surgery.
 
 
 
-**Disclaimer**
+# **_Disclaimer_**
 
 This project is entirely fictitious and was created for academic purposes. The NHS Trust mentioned in this case study is not real, and the data used does not reflect actual patient information.
 
