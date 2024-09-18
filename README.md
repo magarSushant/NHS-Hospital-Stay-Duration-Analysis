@@ -1,12 +1,12 @@
-# NHS-Hospital-Stay-Duration-Analysis
+## NHS-Hospital-Stay-Duration-Analysis
 Predictive modeling project for analyzing hospital stay durations using Alteryx.
 Hospital Stay Duration Analysis (Fictitious Case Study)
 
-**_**Project Overview**_**
+# **_**Project Overview**_**
 
 This project is a fictitious case study created as part of the MSc Business Analytics curriculum at Royal Holloway, University of London. The objective was to predict hospital stay durations for back surgery patients using data analysis and predictive modeling techniques. While the scenario is fictional, the techniques and approaches employed are applicable to real-world healthcare analytics.
 
-_**Context and Objectives**_
+# _**Context and Objectives**_
 
 The project simulates a consultancy assignment for the NHS Trust, aiming to:
 
@@ -18,7 +18,7 @@ Enhance patient care by improving recovery protocols and reducing unnecessary ho
 
 Support strategic decision-making by providing data-driven insights for service expansion and staffing.
 
-_**Data Processing**_
+# _**Data Processing**_
 
 The following steps were taken to prepare the dataset:
 
@@ -31,7 +31,7 @@ _Surgery Type Analysis_: Data on surgery types and approaches was parsed and mer
 _Temporal Analysis_: Patterns in admission and discharge times were explored to optimize hospital operations.
 
 
-_**Predictive Modeling**_
+# _**Predictive Modeling**_
 
 Several machine learning models were applied to forecast hospital stay durations:
 
@@ -40,7 +40,7 @@ _Linear Regression_: The best-performing model with the highest accuracy.
 _Decision Tree & Random Forest_: Provided additional insights, though with slightly higher error margins compared to Linear Regression.
 
 
-_**Key Findings**_
+# _**Key Findings**_
 
 _Early Ambulation_: Strong correlation with shorter hospital stays.
 
@@ -49,7 +49,7 @@ _Surgery Type & Approach_: Invasive procedures were linked to longer recovery ti
 _Admission & Discharge Patterns_: Weekends and certain weekdays were associated with prolonged stays.
 
 
-_**Technologies Used**_
+# _**Technologies Used**_
 
 _Alteryx_: For data preparation and modeling.
 
@@ -58,7 +58,7 @@ _Excel_: For data management.
 _GitHub_: Version control and repository for project materials.
 
 
-_**How to Use This Repository**_
+# _**How to Use This Repository**_
 
 _Download the Alteryx Workflow_: Replicate the data processing and predictive modeling steps.
 
@@ -66,7 +66,7 @@ _Explore the Data_: Place data files in the relevant folders (note that datasets
 
 _View the Report_: Access the consultancy report for detailed analysis and insights.
 
-## Project Resources
+# _**Project Resources**_
 
 For detailed analysis and methodology, please refer to the [Alteryx Workflow]([link_to_workflow](https://github.com/magarSushant/NHS-Hospital-Stay-Duration-Analysis/blob/main/NHS-Consultancy%20Atleryx%20Workflow.yxmd) where all assumptions, data preparation steps, and methodologies are thoroughly documented with comments. 
 
