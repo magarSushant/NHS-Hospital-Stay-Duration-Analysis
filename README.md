@@ -53,8 +53,6 @@ _**Technologies Used**_
 
 _Alteryx_: For data preparation and modeling.
 
-_Python_: For additional data analysis.
-
 _Excel_: For data management.
 
 _GitHub_: Version control and repository for project materials.
