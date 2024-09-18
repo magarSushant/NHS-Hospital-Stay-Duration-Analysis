@@ -1,0 +1,3430 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="241">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="127" y="54" width="1032" height="132" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>NHS HOSPITAL STAY DURATION ANALYSIS FOR BACK SURGERY PATIENTS</Text>
+          <Font name="Arial" size="26.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="0" g="38" b="62" />
+          <Shape shape="0" />
+          <Justification Justification="1" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="242">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="127" y="198" width="1032" height="96" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Pilot project involving data analysis and predictive modeling to analyse the hospital stay duration of back surgery patients to enhance resource allocation, cost management, and patient outcomes within the NHS.</Text>
+          <Font name="Arial" size="18" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1374" y="1085" width="325" height="254" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Blending-Joining Surgery Type Dataset</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Data Blending-Joining Surgery Type Dataset</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1399" y="1134" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="ICD-10 Code" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="ICD-10 Code" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Date of Birth (Date Format)" selected="False" input="Left_" />
+                    <SelectField field="Right_ICD-10 Code" selected="True" rename="Right_ICD-10 Code" input="Right_" />
+                    <SelectField field="Left_Date of Birth" selected="False" input="Left_" />
+                    <SelectField field="Right_Patient ID" selected="False" rename="Right_Patient ID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1411" y="1194" width="239" height="120" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Joining the data sets it was observed that there were no surgeries  for three ICD Codes. The lack of corresponding ICD-10 codes in the join results suggests that specific surgical procedures were not performed on patients within the dataset during the specified timeframe, potentially influencing healthcare insights.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1314" y="653" width="554" height="360" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Blending and Preparation-Joining Patient Information and Surgical information</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Data Blending and Preparation-Joining Patient Information and Surgical information</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="1351" y="822" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Patient ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Patient ID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Date of Birth" selected="False" input="Left_" />
+                    <SelectField field="Right_Patient ID" selected="False" rename="Right_Patient ID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1339" y="702" width="204" height="124" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>While joining the Patient Information with Surgical Information it was found that 10 patients did not have any kind of surgery and are irrelevant for the predictions to be made. Asking why could raise questions about data quality, data completeness, reasons for patients not opting for surgery or missing surgery records and so on.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1615" y="822" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeDiff([Hospital Admission Date], [Date of Birth (Date Format)], &quot;years&quot;)&#xA;" field="Age" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Age = DateTimeDiff([Hospital Admission Date], [Date of Birth (Date Format)], "ye...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="47">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1567" y="714" width="276" height="112" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>We used the formula tool to calculate the age of patients from the given date of birth and admission date. Using the hospital admission date ensures consistency acr0ss different data sets and analysis periods.  It provides an accurate and relevant  reflection of the patient's age at the specific point in time when they were admitted to the hospital.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="128">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="4194" y="772" width="414" height="435" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Model Comparision</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Model Comparision</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="129">
+          <GuiSettings>
+            <Position x="4339" y="978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="target.level" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="predictions">
+              <RecordInfo>
+                <Field name="Actual" source="R-DATA:" type="Double" />
+                <Field name="Linear_Regression" source="R-DATA:" type="Double" />
+                <Field name="Forest_Model" source="R-DATA:" type="Double" />
+                <Field name="Decision_Tree" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="error_measures">
+              <RecordInfo>
+                <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="Correlation" source="R-DATA:" type="Double" />
+                <Field name="RMSE" source="R-DATA:" type="Double" />
+                <Field name="MAE" source="R-DATA:" type="Double" />
+                <Field name="MPE" source="R-DATA:" type="Double" />
+                <Field name="MAPE" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Report">
+              <RecordInfo>
+                <Field name="Group" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+                <Field name="Layout" size="1073741823" source="Report:Layout:" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Model Comparison.yxmc" />
+        </Node>
+        <Node ToolID="133">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="4219" y="978" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="229">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="4434" y="821" width="149" height="361" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Browse Tool</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Browse Tool</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="134">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="4459" y="870" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_498e91f2319dda4a92f366c846b3a4d0~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="135">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="4459" y="978" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_8f8809eaae610c468f4909347d9a2d17~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="136">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="4471" y="1098" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_cb6340a7407d194dba80da8d9cb19d3e~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="653" y="484" width="568" height="892" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Preparation and Data Parsing</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Data Preparation and Data Parsing</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="690" y="533" width="446" height="228" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Date Time Conversion</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Date Time Conversion</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="13">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="907" y="582" width="204" height="108" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>We can use the Select tool to convert the data type from string to date time. But in this case there was an error  because the string format doesn't match Alteryx’s standardized date time format. Hence used date time parse to get to a standardized format.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="14">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+                <Position x="811" y="630" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <IsFrom value="False" />
+                  <InputFieldName>Date of Birth</InputFieldName>
+                  <Language>English</Language>
+                  <Format>MM/dd/yyyy</Format>
+                  <OutputFieldName>Date of Birth (Date Format)</OutputFieldName>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Convert Date of Birth From:
+MM/dd/yyyy</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+            </Node>
+            <Node ToolID="236">
+              <GuiSettings>
+                <Position x="715" y="630" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="Check Box (135)">False</Value>
+                  <Value name="Check Box (136)">False</Value>
+                  <Value name="List Box (11)">"Patient ID","First Name","Last Name","Date of Birth","Gender"</Value>
+                  <Value name="Check Box (84)">True</Value>
+                  <Value name="Check Box (117)">True</Value>
+                  <Value name="Check Box (15)">True</Value>
+                  <Value name="Check Box (109)">False</Value>
+                  <Value name="Check Box (122)">False</Value>
+                  <Value name="Check Box (53)">False</Value>
+                  <Value name="Check Box (58)">False</Value>
+                  <Value name="Check Box (70)">False</Value>
+                  <Value name="Check Box (77)">False</Value>
+                  <Value name="Drop Down (81)">upper</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Cleanse.yxmc" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="678" y="857" width="518" height="252" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Calculation of Pre Surgery Time,Hours till Ambulation and Release</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Calculation of Pre Surgery Time,Hours till Ambulation and Release</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="20">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="799" y="918" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="DateTimeDiff([First Ambulation], [Surgery End Datetime], &quot;seconds&quot;) / 3600&#xA;" field="Hours till Ambulation" size="19.2" type="FixedDecimal" />
+                    <FormulaField expression="DateTimeDiff([Hospital Release], [First Ambulation], &quot;seconds&quot;) / 3600" field="Hours till Release from Ambulation " size="19.2" type="FixedDecimal" />
+                    <FormulaField expression="DateTimeDiff([Surgery End Datetime], [Hospital Admission Date], &quot;seconds&quot;) / 3600" field="Pre Surgery Preparation Time" size="19.2" type="FixedDecimal" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Hours till Ambulation = DateTimeDiff([First Ambulation], [Surgery End Datetime],...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="21">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="895" y="906" width="276" height="146" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text><![CDATA[Calculated Hours till Ambulation to align with the Current Patient sheet(evaluation set). Also, Hours/Time till release and Surgery preparation time have been calculated to see any correlations/further predictions which can be useful recommendations to NHS for obtaining further details to strengthen the predictions. The measurement of hours has been calculated by ignoring the rounding off and by using decimals for remaining time because decimals in hours enhance accuracy, granularity, and precision in analysis.
+
+
+
+
+
+]]></Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="237">
+              <GuiSettings>
+                <Position x="703" y="918" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="Check Box (135)">False</Value>
+                  <Value name="Check Box (136)">False</Value>
+                  <Value name="List Box (11)">"Patient ID","Hospital Admission Date","ICD-10 Code","Surgery End Datetime","First Ambulation","Hospital Release"</Value>
+                  <Value name="Check Box (84)">True</Value>
+                  <Value name="Check Box (117)">True</Value>
+                  <Value name="Check Box (15)">True</Value>
+                  <Value name="Check Box (109)">False</Value>
+                  <Value name="Check Box (122)">False</Value>
+                  <Value name="Check Box (53)">False</Value>
+                  <Value name="Check Box (58)">False</Value>
+                  <Value name="Check Box (70)">False</Value>
+                  <Value name="Check Box (77)">False</Value>
+                  <Value name="Drop Down (81)">upper</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Cleanse.yxmc" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="689" y="1145" width="482" height="206" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Data Parsing  for Surgery Type</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Data Parsing  for Surgery Type</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="31">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="810" y="1194" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>Description</Field>
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>Approach</RootName>
+                  <Delimeters value="," />
+                  <NumFields value="2" />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="34">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="906" y="1194" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>Approach1</Field>
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>Approach1</RootName>
+                  <Delimeters value=" " />
+                  <NumFields value="3" />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="32">
+              <GuiSettings>
+                <Position x="1003" y="1194" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="Check Box (135)">False</Value>
+                  <Value name="Check Box (136)">False</Value>
+                  <Value name="List Box (11)">"ICD-10 Code","Description","Approach1","Approach2"</Value>
+                  <Value name="Check Box (84)">True</Value>
+                  <Value name="Check Box (117)">True</Value>
+                  <Value name="Check Box (15)">True</Value>
+                  <Value name="Check Box (109)">False</Value>
+                  <Value name="Check Box (122)">False</Value>
+                  <Value name="Check Box (53)">False</Value>
+                  <Value name="Check Box (58)">False</Value>
+                  <Value name="Check Box (70)">False</Value>
+                  <Value name="Check Box (77)">False</Value>
+                  <Value name="Drop Down (81)">upper</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Cleanse.yxmc" />
+            </Node>
+            <Node ToolID="35">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="1087" y="1194" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="ICD-10 Code" selected="True" />
+                    <SelectField field="Description" selected="False" />
+                    <SelectField field="Approach1" selected="False" rename="Description1" />
+                    <SelectField field="Approach11" selected="True" rename="Surgery Type" />
+                    <SelectField field="Approach2" selected="True" rename="Surgical Approach" />
+                    <SelectField field="Approach12" selected="False" />
+                    <SelectField field="Approach13" selected="True" rename="Surgery Area/Process" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="36">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="810" y="1254" width="336" height="72" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>The ICD code file was parsed using Text to Column tool by removing delimiters including comma and space to obtain  Surgery Type. Other relevant fields for proper predictions such as Surgery Area/Process and Approach were obtained which can form a part of analysis and recommendations.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="238">
+              <GuiSettings>
+                <Position x="714" y="1194" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="Check Box (135)">False</Value>
+                  <Value name="Check Box (136)">False</Value>
+                  <Value name="List Box (11)">"ICD-10 Code","Description"</Value>
+                  <Value name="Check Box (84)">True</Value>
+                  <Value name="Check Box (117)">True</Value>
+                  <Value name="Check Box (15)">True</Value>
+                  <Value name="Check Box (109)">False</Value>
+                  <Value name="Check Box (122)">False</Value>
+                  <Value name="Check Box (53)">False</Value>
+                  <Value name="Check Box (58)">False</Value>
+                  <Value name="Check Box (70)">False</Value>
+                  <Value name="Check Box (77)">False</Value>
+                  <Value name="Drop Down (81)">upper</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Cleanse.yxmc" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="137">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="4722" y="845" width="526" height="302" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Scoring</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Scoring</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="138">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="4747" y="894" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Current Patients.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Current Patients.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Gender" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Current Patients.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Age" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Current Patients.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Surgery Type" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Current Patients.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Hours till Ambulation" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Current Patients.xlsx|||`Sheet1$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="139">
+          <GuiSettings Plugin="Score">
+            <Position x="4855" y="894" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="modelChoice">Local Model</Value>
+              <Value name="score field">
+              </Value>
+              <Value name="is oversampled">False</Value>
+              <Value name="oversampled value">
+              </Value>
+              <Value name="original percent">2</Value>
+              <Value name="log y">False</Value>
+              <Value name="prediction.interval">False</Value>
+              <Value name="interval.level">95</Value>
+              <Value name="append.xdf">False</Value>
+              <Value name="num.records">256000</Value>
+              <Value name="credentials">
+              </Value>
+              <Value name="models">
+              </Value>
+              <Value name="page">
+              </Value>
+              <Value name="errorStatus">
+              </Value>
+              <Value name="modelDetailJSON">
+              </Value>
+              <Value name="modelDetails">{"Name":"","Owner":"","Status":"","Id":"","LastDeployment":"","LastUpdated":"","LatestVersion":"","ActiveVersion":"","NumReplications":"","NumVersions":""}</Value>
+              <Value name="promoteURL">
+              </Value>
+              <Value name="username">
+              </Value>
+              <Value name="model_name">
+              </Value>
+              <Value name="model_owner">
+              </Value>
+              <Value name="apiKey">
+              </Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Score\Supporting_Macros\score-engine.yxmc" EngineDll="Macro" EngineDllEntryPoint="Score\Supporting_Macros\score-engine.yxmc" />
+        </Node>
+        <Node ToolID="141">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="4951" y="894" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Surgery.Type" selected="True" rename="Surgery Type" />
+                <SelectField field="Hours.till.Ambulation" selected="True" rename="Hours till Ambulation" type="FixedDecimal" size="19.2" />
+                <SelectField field="Score" selected="True" rename="Length of Hospital Stay (Hrs.)" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="145">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="4783" y="1050" width="420" height="72" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Linear Regression Model was used based on the result of  model comparison.
+
+Using DateTime Tool to convert length of stay from hours to days (for readability &amp; interpretability) was not useful because the datatype was not a string but a fixed decimal. Hence formula tool ha been used for the conversion.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="146">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="5047" y="894" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Length of Hospital Stay (Hrs.)] / 24&#xA;" field="Length of Hospital Stay (Days)" size="19.2" type="FixedDecimal" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Length of Hospital Stay (Days) = [Length of Hospital Stay (Hrs.)] / 24
+
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="147">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="5143" y="894" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="1033">
+                <Field field="Length of Hospital Stay (Days)" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Length of Hospital Stay (Days) - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2669" y="232" width="724" height="2080" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Data Investigation and Descriptive analytics</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Data Investigation and Descriptive analytics</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="163">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2718" y="1121" width="638" height="574" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Time-Based Analysis</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Time-Based Analysis</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="82">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2743" y="1170" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Day of Admission" action="GroupBy" rename="Day of Admission" />
+                    <SummarizeField field="Day of Admission" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="150">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2743" y="1254" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Day of Discharge" action="GroupBy" rename="Day of Discharge" />
+                    <SummarizeField field="Day of Discharge" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="159">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2743" y="1362" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Month of Admission" action="GroupBy" rename="Month of Admission" />
+                    <SummarizeField field="Month of Admission" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="151">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2827" y="1170" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (in Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="152">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2839" y="1254" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (in Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="89">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="3019" y="1266" width="312" height="180" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text><![CDATA[
+
+Temporal Patterns in hospital stays show longer stays for patients admitted on Saturdays/Thursdays and discharged on Sundays. Seasonal variations indicate December has longest stays. August experiences high patient volumes.
+
+This information is crucial for the NHS because it directly impacts operational efficiency, resource allocation, and patient care outcomes. Understanding the patterns in hospital stays allows the NHS to anticipate and prepare for fluctuations in patient volumes, ensuring that staffing levels and resources are aligned with demand.]]></Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="157">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2947" y="1170" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="158">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2947" y="1254" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="160">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2827" y="1362" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (in Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="162">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2911" y="1362" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="75">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2743" y="1566" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Hours till Ambulation" action="Avg" rename="Avg_Hours till Ambulation" />
+                    <SummarizeField field="Hours till Ambulation" action="Min" rename="Min_Hours till Ambulation" />
+                    <SummarizeField field="Hours till Ambulation" action="Max" rename="Max_Hours till Ambulation" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Min" rename="Min_Length of Hospital Stay (in Hrs.)" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Max" rename="Max_Length of Hospital Stay (in Hrs.)" />
+                    <SummarizeField field="Hours till Release from Ambulation " action="Avg" rename="Avg_Hours till Release from Ambulation " />
+                    <SummarizeField field="Hours till Release from Ambulation " action="Min" rename="Min_Hours till Release from Ambulation " />
+                    <SummarizeField field="Hours till Release from Ambulation " action="Max" rename="Max_Hours till Release from Ambulation " />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="78">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="3067" y="1566" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Name" selected="False" />
+                    <SelectField field="1" selected="True" rename="Metric" />
+                    <SelectField field="2" selected="True" />
+                    <SelectField field="Value" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="81">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+                <Position x="3175" y="1566" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <GroupFields>
+                    <Field field="Metric" />
+                  </GroupFields>
+                  <HeaderField field="2" />
+                  <DataField field="Value" />
+                  <Methods>
+                    <Method method="Sum" />
+                  </Methods>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field description="TextToColumns: Parsed from Name" name="Metric" size="39" source="CrossTab:Group:Sum:" type="String" />
+                    <Field name="Hours_till_Ambulation" source="CrossTab:Header:2:Hours till Ambulation:Sum:" type="Double" />
+                    <Field name="Hours_till_Release_from_Ambulation_" source="CrossTab:Header:2:Hours till Release from Ambulation :Sum:" type="Double" />
+                    <Field name="Length_of_Hospital_Stay__in_Hrs__" source="CrossTab:Header:2:Length of Hospital Stay (in Hrs.):Sum:" type="Double" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+            </Node>
+            <Node ToolID="88">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="2815" y="1626" width="420" height="44" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>Summarize tool has been used to find average, Minimum and Maximum values. Transpose, Text to Column and Cross Tab tool has been used for this requirement.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="76">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+                <Position x="2875" y="1566" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ErrorWarn>Warn</ErrorWarn>
+                  <KeyFields />
+                  <DataFields>
+                    <Field field="Avg_Hours till Ambulation" selected="True" />
+                    <Field field="Min_Hours till Ambulation" selected="True" />
+                    <Field field="Max_Hours till Ambulation" selected="True" />
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" />
+                    <Field field="Min_Length of Hospital Stay (in Hrs.)" selected="True" />
+                    <Field field="Max_Length of Hospital Stay (in Hrs.)" selected="True" />
+                    <Field field="Avg_Hours till Release from Ambulation " selected="True" />
+                    <Field field="Min_Hours till Release from Ambulation " selected="True" />
+                    <Field field="Max_Hours till Release from Ambulation " selected="True" />
+                    <Field field="*Unknown" selected="True" />
+                  </DataFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+            </Node>
+            <Node ToolID="77">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+                <Position x="2983" y="1566" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Field>Name</Field>
+                  <ErrorHandling>Last</ErrorHandling>
+                  <RootName>
+                  </RootName>
+                  <Delimeters value="_" />
+                  <NumFields value="2" />
+                  <Flags value="0" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+            </Node>
+            <Node ToolID="221">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2743" y="1458" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Month of Discharge" action="GroupBy" rename="Month of Discharge" />
+                    <SummarizeField field="Month of Discharge" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (In Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (In Hrs.)" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="222">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2851" y="1458" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (In Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (In Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="223">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2935" y="1458" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (In Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="164">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2694" y="281" width="674" height="530" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Patient Demographics Analysis (Gender and Age)</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Patient Demographics Analysis (Gender and Age)</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="60">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2731" y="402" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Gender" action="GroupBy" rename="Gender" />
+                    <SummarizeField field="Gender" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="61">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2815" y="486" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (in Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="64">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="2719" y="606" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="IF [Age] &lt;= 20 THEN '0-20'&#xA;ELSEIF [Age] &lt;= 40 THEN '21-40'&#xA;ELSEIF [Age] &lt;= 60 THEN '41-60'&#xA;ELSEIF [Age] &lt;= 80 THEN '61-80'&#xA;ELSE '81+'&#xA;ENDIF&#xA;" field="Age Group" size="1073741823" type="V_WString" />
+                    <FormulaField expression="+[Hours till Ambulation]+[Hours till Release from Ambulation ]" field="Total Recovery Time" size="19.2" type="FixedDecimal" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Age Group = IF [Age] &lt;= 20 THEN '0-20'
+ELSEIF [Age] &lt;= 40 THEN '21-40'
+ELSEIF [A...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="65">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2803" y="606" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Age Group" action="GroupBy" rename="Age Group" />
+                    <SummarizeField field="Age" action="Count" rename="Count" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                    <SummarizeField field="Total Recovery Time" action="Avg" rename="Avg_Total Recovery Time" />
+                    <SummarizeField field="Hours till Ambulation" action="Avg" rename="Avg_Hours till Ambulation" />
+                    <SummarizeField field="Hours till Release from Ambulation " action="Avg" rename="Avg_Hours till Release from Ambulation " />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="66">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="2995" y="606" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Total Recovery Time" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Total Recovery Time - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="68">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2899" y="486" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Gender" selected="True" />
+                    <SelectField field="Count" selected="True" />
+                    <SelectField field="Total Count" selected="True" />
+                    <SelectField field="Percentage to Total" selected="True" />
+                    <SelectField field="*Unknown" selected="True" />
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="85">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="3127" y="558" width="215" height="228" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>The summarize tool has been used to find the length of stay at the hospital based on the age stats available. Formula tool was used to form age groups for readability which can be changed at NHS's discretion. Also Total recovery time was calculated for further analysis. However, Hospital stay and recovery times vary minimally across age groups.
+
+Although individual variances in terms of age group in recovery times may seem insignificant, their collective effect for total number of patients (including back surgery) on resource distribution, patient flow, expenses, and care quality can be considerable.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="148">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+                <Position x="2995" y="486" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Expression><![CDATA[[Gender] != 'OTH' AND [Gender] != 'ASKU'
+]]></Expression>
+                  <Mode>Custom</Mode>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText><![CDATA[[Gender] != 'OTH' AND [Gender] != 'ASKU'
+]]></DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+            </Node>
+            <Node ToolID="62">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="3115" y="330" width="228" height="216" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text><![CDATA[ The summarize tool has been used to find the length of stay at the hospital based on the gender stats available. This is a part of descriptive analytics.
+
+"OTH" contains  gender identities divergent from typical categories, while "ASKU" indicates instances where gender identity data is solicited but undisclosed. These can be filtered out using filter tool for statistical clarity. Coneversely, Including "OTH" and "ASKU" in analysis helps respect diversity in data, reveals data insights, and prompts data collection improvement for NHS for better accuracy.
+
+Further investigation is required.]]></Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+            <Node ToolID="149">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2899" y="606" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="Avg_Total Recovery Time" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="Avg_Hours till Ambulation" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="Avg_Hours till release from ambulation" selected="False" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="218">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2815" y="402" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Count" action="Sum" rename="Total Count" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="219">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="2731" y="486" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="[Count]/[Total Count]*100" field="Percentage to Total" size="19.2" type="FixedDecimal" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText><![CDATA[Percentage to Total = [Count]/[Total Count]*100
+]]></DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="220">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+                <Position x="2971" y="402" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <CartesianMode>Error</CartesianMode>
+                  <SelectConfiguration>
+                    <Configuration outputConnection="Output">
+                      <OrderChanged value="False" />
+                      <CommaDecimal value="False" />
+                      <SelectFields>
+                        <SelectField field="*Unknown" selected="True" />
+                      </SelectFields>
+                    </Configuration>
+                  </SelectConfiguration>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="165">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2730" y="833" width="566" height="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Surgery Type/Medical Condition Analysis</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Surgery Type/Medical Condition Analysis</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="91">
+              <GuiSettings>
+                <Position x="2755" y="906" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="response">Length of Hospital Stay (In Hrs.)</Value>
+                  <Value name="binary">False</Value>
+                  <Value name="target" />
+                  <Value name="group var">Surgery Type</Value>
+                  <Value name="se">False</Value>
+                  <Value name="sd">False</Value>
+                  <Value name="ci">True</Value>
+                  <Value name="conf">95</Value>
+                  <Value name="none">False</Value>
+                  <Value name="inches">True</Value>
+                  <Value name="in.w">5.50</Value>
+                  <Value name="in.h">5.50</Value>
+                  <Value name="centimeters">False</Value>
+                  <Value name="cm.w">13.00</Value>
+                  <Value name="cm.h">14.95</Value>
+                  <Value name="graph.resolution">1x</Value>
+                  <Value name="pointsize">10</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Predictive Tools\Plot_of_Means.yxmc" />
+            </Node>
+            <Node ToolID="92">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="2887" y="906" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_2412aab409869749a03b504b60a12b5e~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="86">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="2971" y="882" width="300" height="168" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>The plot of means has been used to find the length of stay at the hospital based on the medical condition data available. This is a part of data investigation.
+Certain surgery types like replacements and extirpations exhibit longer hospital stays and recovery times, while extractions and removals show shorter durations. Percutaneous Endoscopic Approach leads to longer stays, while Percutaneous Approach has the shortest. Understanding these trends can guide NHS in prioritizing less invasive techniques, optimizing resource allocation, and improving patient outcomes.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="204">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2694" y="1721" width="662" height="289" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Ambulation Timing Impact Analysis</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Ambulation Timing Impact Analysis</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="190">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+                <Position x="2791" y="1830" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <FormulaFields>
+                    <FormulaField expression="IF [Hours till Ambulation] &lt;= 24 THEN &quot;Early Ambulation&quot;&#xA;ELSE &quot;Late Ambulation&quot;&#xA;ENDIF" field="Ambulation Type" size="1073741823" type="V_WString" />
+                  </FormulaFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Ambulation Type = IF [Hours till Ambulation] &lt;= 24 THEN "Early Ambulation"
+ELSE ...</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+            </Node>
+            <Node ToolID="191">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2719" y="1830" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Patient ID" selected="False" />
+                    <SelectField field="Age" selected="False" />
+                    <SelectField field="Admission Date" selected="False" />
+                    <SelectField field="ICD-10 Code" selected="False" />
+                    <SelectField field="Surgery Type" selected="False" />
+                    <SelectField field="Surgical Approach" selected="False" />
+                    <SelectField field="Surgery Area/Process" selected="False" />
+                    <SelectField field="Surgery End Datetime" selected="False" />
+                    <SelectField field="First Ambulation" selected="False" />
+                    <SelectField field="Discharge Date" selected="False" />
+                    <SelectField field="Day of Admission" selected="False" />
+                    <SelectField field="Month of Admission" selected="False" />
+                    <SelectField field="Day of Discharge" selected="False" />
+                    <SelectField field="Month of Discharge" selected="False" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="192">
+              <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+                <Position x="2875" y="1830" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SummarizeFields>
+                    <SummarizeField field="Ambulation Type" action="GroupBy" rename="Ambulation Type" />
+                    <SummarizeField field="Length of Hospital Stay (in Hrs.)" action="Avg" rename="Avg_Length of Hospital Stay (in Hrs.)" />
+                    <SummarizeField field="Total Recovery Time" action="Avg" rename="Avg_Total Recovery Time" />
+                    <SummarizeField field="Hours till Release from Ambulation " action="Avg" rename="Avg_Hours till Release from Ambulation " />
+                    <SummarizeField field="Ambulation Type" action="Count" rename="Count" />
+                  </SummarizeFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+            </Node>
+            <Node ToolID="197">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2959" y="1830" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Avg_Length of Hospital Stay (in Hrs.)" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="Avg_Total Recovery Time" selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="Avg_Hours till Release from Ambulation " selected="True" type="FixedDecimal" size="19.2" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+            </Node>
+            <Node ToolID="198">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+                <Position x="3043" y="1830" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <SortInfo locale="1033">
+                    <Field field="Avg_Length of Hospital Stay (in Hrs.)" order="Descending" />
+                  </SortInfo>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText>Avg_Length of Hospital Stay (in Hrs.) - Descending</DefaultAnnotationText>
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+            </Node>
+            <Node ToolID="205">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="3115" y="1770" width="216" height="215" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>Analysis of effect of ambulation has been carried out by using summarize, sort and select tool. Standard practice of ambulation within 24 hours is considered early and the remaining late ambulation which is very important for NHS to confirm and make changes as required.
+
+The data indicates that patients who undergo early ambulation have shorter average lengths of hospital stay and faster recovery times compared to those with late ambulation. Also, extensive analysis on possibility of early ambulation can be done further based on surgery type and age groups.</Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="216">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2766" y="2057" width="494" height="230" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Association analysis-</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Association analysis-</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="226">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="2911" y="2202" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_9b1cee0510cf1441881e166191ee081d~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="225">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="2911" y="2118" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_303d8968cc0b6749bd302d66e9a6131b~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="224">
+              <GuiSettings>
+                <Position x="2791" y="2154" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Value name="do target">True</Value>
+                  <Value name="target">Length of Hospital Stay (In Hrs.)</Value>
+                  <Value name="target level" />
+                  <Value name="use fields">"Age","Hours till Ambulation","Hours till Release from Ambulation ","Pre Surgery Preparation Time"</Value>
+                  <Value name="Pearson">True</Value>
+                  <Value name="Spearman">False</Value>
+                  <Value name="Hoeffding">False</Value>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings Macro="Predictive Tools\Association_Analysis.yxmc" />
+            </Node>
+            <Node ToolID="217">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="2983" y="2106" width="252" height="156" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text><![CDATA[ Association Analysis tool has been used to calcuate corelations between variables.
+
+The analysis reveals significant correlations between various factors and the length of hospital stay. Strong positive correlations were found between the length of hospital stay and both the time until ambulation (0.79) and the time until release from ambulation (0.88), indicating that delayed ambulation can prolong hospital stays
+
+ In general, efficient pre-surgery preparation is expected to reduce the total length of hospital stay by ensuring smoother procedures and faster recovery. Additionally, a moderate positive correlation (0.41) was observed between pre-surgery preparation time and hospital stay length, suggesting that longer preparation times may contribute to extended stays.
+
+
+
+
+
+]]></Text>
+                  <Font name="Arial" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="110">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3510" y="676" width="606" height="723" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Model Building and Evaluation</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Model Building and Evaluation</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="112">
+          <GuiSettings>
+            <Position x="3535" y="966" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="estimation pct">70</Value>
+              <Value name="validation pct">30</Value>
+              <Value name="rand seed">1</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Create_Samples.yxmc" />
+        </Node>
+        <Node ToolID="117">
+          <GuiSettings Plugin="Linear_Regression">
+            <Position x="3691" y="834" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="curPage">Home</Value>
+              <Value name="curTab">advanced</Value>
+              <Value name="standardize_pred">True</Value>
+              <Value name="internal_cv">True</Value>
+              <Value name="display_graphs">True</Value>
+              <Value name="set_seed_internal_cv">True</Value>
+              <Value name="set_seed_external_cv">True</Value>
+              <Value name="lambda_1se">True</Value>
+              <Value name="lambda_min">False</Value>
+              <Value name="Model Name">Linear_Regression</Value>
+              <Value name="Y Var">Length of Hospital Stay (In Hrs.)</Value>
+              <Value name="X Vars">Gender,Age,Surgery Type,Hours till Ambulation</Value>
+              <Value name="Omit Constant">False</Value>
+              <Value name="Use Weights">False</Value>
+              <Value name="Weight Vec" />
+              <Value name="regularization">False</Value>
+              <Value name="alpha">0.5</Value>
+              <Value name="nfolds">5</Value>
+              <Value name="lambda">lambda_1se</Value>
+              <Value name="seed_internal_cv">1</Value>
+              <Value name="lambda_no_cv">0.5</Value>
+              <Value name="external_cv">False</Value>
+              <Value name="nfolds_external">5</Value>
+              <Value name="numberTrials">3</Value>
+              <Value name="external_seed_value">1</Value>
+              <Value name="graph.resolution">1x</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Linear_Regression</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" />
+        </Node>
+        <Node ToolID="121">
+          <GuiSettings>
+            <Position x="3703" y="966" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Model Name">Forest_Model</Value>
+              <Value name="Y Var">Length of Hospital Stay (In Hrs.)</Value>
+              <Value name="X Vars">Gender + Age + Surgery Type + Hours till Ambulation</Value>
+              <Value name="Num Trees">500</Value>
+              <Value name="Custom Num Vars">False</Value>
+              <Value name="Num Vars">3</Value>
+              <Value name="model.size">False</Value>
+              <Value name="total.nodes">100</Value>
+              <Value name="max.depth">10</Value>
+              <Value name="node.size">5</Value>
+              <Value name="replace">True</Value>
+              <Value name="samp.rate">100</Value>
+              <Value name="inches">True</Value>
+              <Value name="in.w">5.50</Value>
+              <Value name="in.h">5.50</Value>
+              <Value name="centimeters">False</Value>
+              <Value name="cm.w">13.00</Value>
+              <Value name="cm.h">14.95</Value>
+              <Value name="graph.resolution">1x</Value>
+              <Value name="pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Predictive Tools\Forest_Model.yxmc" />
+        </Node>
+        <Node ToolID="228">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="3942" y="725" width="149" height="649" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Browse Tool</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Browse Tool</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="118">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="774" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_3a4c91e1c840c643ac61b34435299e84~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="119">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="846" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_b0cd0ce1841d4b4090bc4f16f9c1e388~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="120">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="930" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_1182b708dbc4d347ad071ca6f0a588bb~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="122">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="1002" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_22251428159d65489252d288c4ee2cb2~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="123">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="1086" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_3f1be0cd99cf8d4ba6db9dba53deb045~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Report</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="232">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="1230" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Layout>
+                    <View1>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                  </Layout>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_b8fa39e87618cd42a3bc290e07dc42d9~.yxdb</TempFile>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="233">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="1290" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Layout>
+                    <View1>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                  </Layout>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_dce7d760085b3845a7037fac33c193a5~.yxdb</TempFile>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="231">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="3967" y="1146" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_10328_f81180ef42b0344dbe760f7ac9205d56_\Engine_10328_d7c9516ec69b1c41b2368d2dbc1049eb~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="230">
+          <GuiSettings Plugin="Decision_Tree">
+            <Position x="3727" y="1134" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="curPage">Home</Value>
+              <Value name="curTab">model</Value>
+              <Value name="curToggle">toggle-main</Value>
+              <Value name="display.static">True</Value>
+              <Value name="set_seed_cv">True</Value>
+              <Value name="showClassificationCV">False</Value>
+              <Value name="showWhenTreePlotAvailable">True</Value>
+              <Value name="showWhenAlgorithmAvailable">False</Value>
+              <Value name="use.gini">True</Value>
+              <Value name="use.information">False</Value>
+              <Value name="usesurrogate.0">True</Value>
+              <Value name="usesurrogate.1">False</Value>
+              <Value name="usesurrogate.2">False</Value>
+              <Value name="total.correct">True</Value>
+              <Value name="percent.correct">False</Value>
+              <Value name="model_type">auto</Value>
+              <Value name="auto">True</Value>
+              <Value name="classification">False</Value>
+              <Value name="regression">False</Value>
+              <Value name="tree_summary">Counts</Value>
+              <Value name="Counts">True</Value>
+              <Value name="Proportions">False</Value>
+              <Value name="tree_plot_size">tree.inches</Value>
+              <Value name="tree.inches">True</Value>
+              <Value name="tree.centimeters">False</Value>
+              <Value name="pruning_plot_size">prune.inches</Value>
+              <Value name="prune.inches">True</Value>
+              <Value name="prune.centimeters">False</Value>
+              <Value name="Model Name">Decision_Tree</Value>
+              <Value name="Y Var">Length of Hospital Stay (In Hrs.)</Value>
+              <Value name="X Vars">Gender,Age,Surgery Type</Value>
+              <Value name="model.algorithm">rpart</Value>
+              <Value name="posClass">
+              </Value>
+              <Value name="use.weights">False</Value>
+              <Value name="select.weights" />
+              <Value name="splitting_criteria">use.gini</Value>
+              <Value name="surrogate_use">usesurrogate.0</Value>
+              <Value name="surrogate_split_criteria">total.correct</Value>
+              <Value name="min.split">20</Value>
+              <Value name="min.bucket">7</Value>
+              <Value name="xval.folds">10</Value>
+              <Value name="max.depth">20</Value>
+              <Value name="max.bins">
+              </Value>
+              <Value name="set_cp">False</Value>
+              <Value name="cp">0</Value>
+              <Value name="rules">False</Value>
+              <Value name="bands_check">False</Value>
+              <Value name="bands">10</Value>
+              <Value name="subset">False</Value>
+              <Value name="winnow">False</Value>
+              <Value name="GlobalPruning">False</Value>
+              <Value name="fuzzyThreshold">False</Value>
+              <Value name="earlyStopping">False</Value>
+              <Value name="trials">1</Value>
+              <Value name="CF">0.25</Value>
+              <Value name="minCases">2</Value>
+              <Value name="sample">0</Value>
+              <Value name="seed">1</Value>
+              <Value name="use_cv">False</Value>
+              <Value name="numberFolds">5</Value>
+              <Value name="numberTrials">3</Value>
+              <Value name="stratified">False</Value>
+              <Value name="cv_seed">1</Value>
+              <Value name="tree.plot">False</Value>
+              <Value name="Branch Dist">False</Value>
+              <Value name="tree.in.w">5.5</Value>
+              <Value name="tree.in.h">5.5</Value>
+              <Value name="tree.cm.w">13</Value>
+              <Value name="tree.cm.h">14.95</Value>
+              <Value name="tree.graph.resolution">1x</Value>
+              <Value name="tree.pointsize">8</Value>
+              <Value name="prune.plot">False</Value>
+              <Value name="prune.in.w">5.5</Value>
+              <Value name="prune.in.h">5.5</Value>
+              <Value name="prune.cm.w">13</Value>
+              <Value name="prune.cm.h">14.95</Value>
+              <Value name="prune.graph.resolution">1x</Value>
+              <Value name="prune.pointsize">10</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Decision_Tree</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Decision_Tree/Supporting_Macros/Decision_Tree.yxmc" EngineDll="Macro" EngineDllEntryPoint="Decision_Tree/Supporting_Macros/Decision_Tree.yxmc" />
+        </Node>
+        <Node ToolID="235">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="3559" y="1242" width="240" height="108" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[The choice of Linear Regression, Decision Tree, and Random Forest models is justified by their distinct strengths. Linear Regression is suited for linear relationships, Decision Trees for capturing non-linear patterns, and Random Forest for handling complex datasets. ]]></Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1926" y="833" width="621" height="285" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Feature Engineering</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Feature Engineering</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1951" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Patient ID" selected="True" />
+                <SelectField field="First Name" selected="False" />
+                <SelectField field="Last Name" selected="False" />
+                <SelectField field="Gender" selected="True" />
+                <SelectField field="Age" selected="True" />
+                <SelectField field="Hospital Admission Date" selected="True" rename="Admission Date" />
+                <SelectField field="ICD-10 Code" selected="True" />
+                <SelectField field="Surgery Type" selected="True" />
+                <SelectField field="Surgical Approach" selected="True" />
+                <SelectField field="Surgery Area/Process" selected="True" />
+                <SelectField field="Surgery End Datetime" selected="True" />
+                <SelectField field="Hours till Ambulation" selected="True" />
+                <SelectField field="First Ambulation" selected="True" />
+                <SelectField field="Hospital Release" selected="True" rename="Discharge Date" />
+                <SelectField field="Time till Release from Ambulation " selected="False" rename="Hours till release from ambulation" />
+                <SelectField field="Right_ICD-10 Code" selected="False" />
+                <SelectField field="Hours till Release from Ambulation " selected="True" />
+                <SelectField field="Pre Surgery Preparation Time" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2023" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeDiff([Discharge Date], [Admission Date], &quot;seconds&quot;)/3600" field="Length of Hospital Stay (In Hrs.)" size="19.2" type="FixedDecimal" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Length of Hospital Stay (In Hrs.) = DateTimeDiff([Discharge Date], [Admission Da...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="2143" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="True" />
+              <InputFieldName>Admission Date</InputFieldName>
+              <Language>English</Language>
+              <Format>day</Format>
+              <OutputFieldName>Day of Admission</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert Admission Date To:
+Custom</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="2011" y="882" width="480" height="60" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Formula tool was used to calculate the length of the hospital stay (the target variable).
+Also DateTime Tool was used to parse the data to obtain day and month of admission and discharge to obtain correlation between hospital stay and day/month of admission and discharge.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="2431" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="True" />
+              <InputFieldName>Discharge Date</InputFieldName>
+              <Language>English</Language>
+              <Format>Month</Format>
+              <OutputFieldName>Month of Discharge</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert Discharge Date To:
+Custom</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="83">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="2239" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="True" />
+              <InputFieldName>Admission Date</InputFieldName>
+              <Language>English</Language>
+              <Format>Month</Format>
+              <OutputFieldName>Month of Admission</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert Admission Date To:
+Custom</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="2335" y="942" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="True" />
+              <InputFieldName>Discharge Date</InputFieldName>
+              <Language>English</Language>
+              <Format>day</Format>
+              <OutputFieldName>Day of Discharge</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Convert Discharge Date To:
+Custom</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="53" y="688" width="519" height="495" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption><![CDATA[Bringing in Data and Browsing the data ]]></Caption>
+          <Style TextColor="#314c4a" FillColor="#eaeaea" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Bringing in Data and Browsing the data ]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="1074" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\ICD-10 Codes.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>ICD-10 Codes.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="True" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="ICD-10 Code" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\ICD-10 Codes.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Description" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\ICD-10 Codes.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="786" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Patient Information.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Patient ID" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="First Name" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Last Name" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Date of Birth" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Gender" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Patient Information.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="906" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Surgical Information.xlsx
+Query=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Patient ID" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Hospital Admission Date" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="Date" />
+                <Field name="ICD-10 Code" size="255" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Surgery End Datetime" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="DateTime" />
+                <Field name="First Ambulation" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="DateTime" />
+                <Field name="Hospital Release" source="File: C:\Users\magar\OneDrive\Desktop\RHUL\Assignments\Machine Learning\Assignments\Assignmnet files\Surgical Information.xlsx|||`Sheet1$`" type="DateTime" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="367" y="1026" width="168" height="72" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Contains data about the codes of back surgery which needs to be aligned with the surgery type field in the dataset to be predicted.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="355" y="762" width="192" height="96" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>It is a register of patient data that has useful fields like date of birth to calculate the age (which is a required field or predictor for the prediction of hospital stay). Also, the date of birth must be changed to the correct format.</Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="355" y="906" width="192" height="60" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[Contains history of surgery correlating Hospital stay with first ambulation, patient ID, and surgery type. ]]></Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="227">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="185" y="737" width="158" height="421" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 227</Caption>
+              <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+              <Disabled value="True" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="6">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="211" y="906" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_32120_c6bf808aa138a344841d87ac8ee2f3aa_\Engine_32120_d5f2a83cfff24740936f66e091b224cf~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="5">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="210" y="786" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_32120_c6bf808aa138a344841d87ac8ee2f3aa_\Engine_32120_d9263192601fcc4594ab108fc4affe12~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="4">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+                <Position x="235" y="1074" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <TempFile>C:\Users\magar\AppData\Local\Temp\Engine_32120_c6bf808aa138a344841d87ac8ee2f3aa_\Engine_32120_baca086bebf5574695ba856d75da1b2a~.yxdb</TempFile>
+                  <TempFileDataProfiling />
+                  <Layout>
+                    <ViewMode>Single</ViewMode>
+                    <ViewSize value="100" />
+                    <View1>
+                      <DefaultTab>Profile</DefaultTab>
+                      <Hints>
+                        <Table />
+                      </Hints>
+                    </View1>
+                    <View2 />
+                  </Layout>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+          </ChildNodes>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="41" Connection="Join" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Join" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="41" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="41" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="error_measures" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="predictions" />
+      <Destination ToolID="135" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="Report" />
+      <Destination ToolID="136" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="133" Connection="Output" />
+      <Destination ToolID="129" Connection="Models" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Validation" />
+      <Destination ToolID="129" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="39" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="39" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="236" Connection="Output26" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="237" Connection="Output26" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="32" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output26" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="238" Connection="Output26" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="138" Connection="Output" />
+      <Destination ToolID="139" Connection="Data" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="139" Connection="Model" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="139" Connection="Output" />
+      <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="141" Connection="Output" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="146" Connection="Output" />
+      <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="151" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="Output" />
+      <Destination ToolID="152" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="159" Connection="Output" />
+      <Destination ToolID="160" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="151" Connection="Output" />
+      <Destination ToolID="157" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="152" Connection="Output" />
+      <Destination ToolID="158" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="160" Connection="Output" />
+      <Destination ToolID="162" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="77" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="221" Connection="Output" />
+      <Destination ToolID="222" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="222" Connection="Output" />
+      <Destination ToolID="223" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="218" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="220" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="218" Connection="Output" />
+      <Destination ToolID="220" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="191" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="91" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="149" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="219" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="220" Connection="Output" />
+      <Destination ToolID="219" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Graph Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="190" Connection="Output" />
+      <Destination ToolID="192" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="191" Connection="Output" />
+      <Destination ToolID="190" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="192" Connection="Output" />
+      <Destination ToolID="197" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="197" Connection="Output" />
+      <Destination ToolID="198" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="224" Connection="Correlation Matrix" />
+      <Destination ToolID="226" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="224" Connection="Output" />
+      <Destination ToolID="225" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Estimation" />
+      <Destination ToolID="117" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Estimation" />
+      <Destination ToolID="121" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Estimation" />
+      <Destination ToolID="230" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="118" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Reports" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Interactive Report" />
+      <Destination ToolID="120" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="121" Connection="Output" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="230" Connection="Output" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="121" Connection="Output" />
+      <Destination ToolID="122" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="121" Connection="Reports" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="230" Connection="Output" />
+      <Destination ToolID="231" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="230" Connection="Reports" />
+      <Destination ToolID="232" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="230" Connection="Interactive" />
+      <Destination ToolID="233" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="150" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="159" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="221" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="224" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="83" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="238" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="236" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="237" Connection="Input2" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>2410518</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b94d7a85-c9ff-4634-b5d8-4fb109f87fd1" />
+      <Telemetry>
+        <PreviousWorkflowId value="02bd90b1-029e-4f30-b2a9-e38cdeaff976" />
+        <OriginWorkflowId value="de067f0d-7330-4060-98bc-380e6accb184" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
