@@ -1,6 +1,7 @@
 # NHS-Hospital-Stay-Duration-Analysis
 Predictive modeling project for analyzing hospital stay durations using Alteryx.
 Hospital Stay Duration Analysis (Fictitious Case Study)
+
 **Project Overview**
 This project is a fictitious case study created as part of the MSc Business Analytics curriculum at Royal Holloway, University of London. The objective was to predict hospital stay durations for back surgery patients using data analysis and predictive modeling techniques. While the scenario is fictional, the techniques and approaches employed are applicable to real-world healthcare analytics.
 
