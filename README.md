@@ -2,11 +2,11 @@
 Predictive modeling project for analyzing hospital stay durations using Alteryx.
 Hospital Stay Duration Analysis (Fictitious Case Study)
 
-**Project Overview**
+**_**Project Overview**_**
 
 This project is a fictitious case study created as part of the MSc Business Analytics curriculum at Royal Holloway, University of London. The objective was to predict hospital stay durations for back surgery patients using data analysis and predictive modeling techniques. While the scenario is fictional, the techniques and approaches employed are applicable to real-world healthcare analytics.
 
-**Context and Objectives**
+_**Context and Objectives**_
 
 The project simulates a consultancy assignment for the NHS Trust, aiming to:
 
@@ -18,51 +18,56 @@ Enhance patient care by improving recovery protocols and reducing unnecessary ho
 
 Support strategic decision-making by providing data-driven insights for service expansion and staffing.
 
-**Data Processing**
+_**Data Processing**_
 
 The following steps were taken to prepare the dataset:
 
-**Time Interval Calculation**: Key metrics such as hours until ambulation and total recovery time were computed.
+_Time Interval Calculation_: Key metrics such as hours until ambulation and total recovery time were computed.
 
-**Patient Grouping**: Patients were grouped by age and gender for more insightful analysis.
+_Patient Grouping_: Patients were grouped by age and gender for more insightful analysis.
 
-**Surgery Type Analysis**: Data on surgery types and approaches was parsed and merged for model development.
+_Surgery Type Analysis_: Data on surgery types and approaches was parsed and merged for model development.
 
-**Temporal Analysis**: Patterns in admission and discharge times were explored to optimize hospital operations.
+_Temporal Analysis_: Patterns in admission and discharge times were explored to optimize hospital operations.
 
-**Predictive Modeling**
+
+_**Predictive Modeling**_
 
 Several machine learning models were applied to forecast hospital stay durations:
 
-**Linear Regression**: The best-performing model with the highest accuracy.
+_Linear Regression_: The best-performing model with the highest accuracy.
 
-**Decision Tree & Random Forest**: Provided additional insights, though with slightly higher error margins compared to Linear Regression.
+_Decision Tree & Random Forest_: Provided additional insights, though with slightly higher error margins compared to Linear Regression.
 
-**Key Findings**
 
-**Early Ambulation**: Strong correlation with shorter hospital stays.
+_**Key Findings**_
 
-**Surgery Type & Approach**: Invasive procedures were linked to longer recovery times.
+_Early Ambulation_: Strong correlation with shorter hospital stays.
 
-**Admission & Discharge Patterns**: Weekends and certain weekdays were associated with prolonged stays.
+_Surgery Type & Approach_: Invasive procedures were linked to longer recovery times.
 
-**Technologies Used**
+_Admission & Discharge Patterns_: Weekends and certain weekdays were associated with prolonged stays.
 
-**Alteryx**: For data preparation and modeling.
 
-**Python**: For additional data analysis.
+_**Technologies Used**_
 
-**Excel**: For data management.
+_Alteryx_: For data preparation and modeling.
 
-**GitHub**: Version control and repository for project materials.
+_Python_: For additional data analysis.
 
-**How to Use This Repository**
+_Excel_: For data management.
 
-**Download the Alteryx Workflow**: Replicate the data processing and predictive modeling steps.
+_GitHub_: Version control and repository for project materials.
 
-**Explore the Data**: Place data files in the relevant folders (note that datasets used here are purely fictional).
 
-**View the Report**: Access the consultancy report for detailed analysis and insights.
+_**How to Use This Repository**_
+
+_Download the Alteryx Workflow_: Replicate the data processing and predictive modeling steps.
+
+_Explore the Data_: Place data files in the relevant folders (note that datasets used here are purely fictional).
+
+_View the Report_: Access the consultancy report for detailed analysis and insights.
+
 
 **Disclaimer**
 
