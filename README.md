@@ -1,6 +1,6 @@
 ### **NHS-Hospital-Stay-Duration-Analysis**
 Predictive modeling project for analyzing hospital stay durations using Alteryx.
-Hospital Stay Duration Analysis (Fictitious Case Study)
+Hospital Stay Duration Analysis 
 
 # **_**Project Overview**_**
 
